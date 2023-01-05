@@ -9,7 +9,7 @@ function devolverPrimerElemento(array) {
 function devolverUltimoElemento(array) {
    // Retornar el último elemento del arreglo recibido por parámetro.
    // Tu código:
-   return array.length-1;
+   return array.pop();
 }
 
 function obtenerLargoDelArray(array) {
@@ -41,7 +41,8 @@ function agregarItemAlComienzoDelArray(array, elemento) {
    // Agrega el "elemento" al comienzo del arreglo recibido.
    // Retorna el arreglo.
    // Tu código:
-   return array.unshift(elemento);
+   array.unshift(elemento);
+   return array;
 }
 
 function dePalabrasAFrase(palabras) {
@@ -69,8 +70,8 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   var suma;
-   for(var i=0; i<arrayOfNums.lenth; i++){
+   var suma=0;
+   for(var i=0; i<arrayOfNums.length; i++){
       suma=suma+arrayOfNums[i];
    }
    return suma;
@@ -80,18 +81,18 @@ function promedioResultadosTest(resultadosTest) {
    // El parámetro "resultadosTest" es un arreglo de números.
    // Itera (en un bucle) los elementos del arreglo y devuelve el promedio de las notas.
    // Tu código:
-   var suma;
-   for(var i=0; i<resultadosTest.lenth; i++){
+   var suma=0;
+   for(var i=0; i<resultadosTest.length; i++){
       suma=suma+resultadosTest[i];
    }
-   return suma/resultadosTest.length-1;
+   return suma/resultadosTest.length;
 }
 
 function numeroMasGrande(arrayOfNums) {
    // El parámetro "arrayOfNums" es un arreglo de números.
    // Retornar el número más grande.
    // Tu código:
-   var aux;
+   var aux=0;
    for (var i = 0; i < arrayOfNums.length; i++) {
       if(aux<arrayOfNums[i]){
          aux=arrayOfNums[i];
@@ -120,7 +121,7 @@ function multiplicarArgumentos() {
 function cuentoElementos(array) {
    // Desarrolla una función que retorne la cantidad de elementos del arreglo cuyo valor sea mayor que 18.
    // Tu código:
-   var aux;
+   var aux=0;
    for(var i=0; i<array.length; i++){
       if(array[i]>18){
          aux++;
@@ -159,13 +160,14 @@ function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar True.
    // Caso contrario retornar False.
    // Tu código:
-   var aux;
    for(var i=0; i<array.length; i++){
       if(array[i]!==array[i+1]){
          return false;
       }
+      else{
+         return true;
+      }
    }
-   return true;
 }
 
 function mesesDelAño(array) {
@@ -192,7 +194,7 @@ function tablaDelSeis() {
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
    var aux=[];
-   for(var i=1; i<11; i++){
+   for(var i=0; i<11; i++){
       aux.push(6*i);
    }
    return aux;
@@ -230,7 +232,7 @@ function breakStatement(num) {
          break;
       }
       else{
-         auxarray[i].push(auxnum);
+         auxarray.push(auxnum);
       }
    }
    if(i<10){
@@ -256,7 +258,7 @@ function continueStatement(num) {
       }
       else{
          auxnum=auxnum+2;
-         auxarray[i].push(auxnum);
+         auxarray.push(auxnum);
       }
    }
    return auxarray;
